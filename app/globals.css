@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Clash';
+  src: url('/font/ClashDisplayMedium.otf') format('opentype');
+  color: rgb(17, 17, 17);
+}
+.para{
+  font-family:'Poppins' !important;
+}
+.header{
+  font-family:'clash' !important;
+  
+}

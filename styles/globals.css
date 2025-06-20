@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Avenir;
+  src: url('/app/font/AvenirRegular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Clash';
+  src: url('/app/font/ClashDisplay-Medium.otf') format('opentype');
+}
+.para{
+  font-family:'Avenir' !important;
+}
+.header{
+  font-family:'clash' !important;
+  
+}
