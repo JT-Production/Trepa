@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -9,19 +10,32 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 import { GiToken } from "react-icons/gi";
 import { MdClass } from "react-icons/md";
 import { RiAiGenerate2 } from "react-icons/ri";
 import { VscVerifiedFilled } from "react-icons/vsc";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function TrepaLanding() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* Navigation */}
-      <nav className="relative z-50 px-6 py-4 flex items-center justify-between">
+      <nav
+        className="relative z-50 px-6 py-4 flex items-center justify-between"
+        data-aos="fade-down"
+      >
         <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           <Image
-            className="w-30"
+            className="md:w-30 lg:w-36 w-20"
             src={"/Trepa_logo_white.svg"}
             alt=""
             width={150}
@@ -43,17 +57,18 @@ export default function TrepaLanding() {
           </Link>
         </div>
         <Button
-              size="lg"
-              className="bg-gradient-to-r text-sm header from-pink-500 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white px-6 py-4 "
-            >
-              Join Beta <ArrowRight className="ml-0.5 w-5 h-5" />
-            </Button>
+          size="lg"
+          className="bg-gradient-to-r text-sm header from-pink-500 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white px-6 py-4 "
+        >
+          Join Beta <ArrowRight className="ml-0.5 w-5 h-5" />
+        </Button>
       </nav>
       {/* grid background */}
-     <div className="absolute z-10 inset-0 h-full w-full 
+      <div
+        className="absolute z-10 inset-0 h-full w-full 
 bg-[linear-gradient(to_right,#101010_1px,transparent_1px),linear-gradient(to_bottom,#101010_1px,transparent_1px)] 
-bg-[size:50px_50px]" />
-
+bg-[size:50px_50px]"
+      />
 
       {/* Hero Section */}
       <section className="flex justify-center px-6 py-10 text-center min-h-screen">
@@ -61,31 +76,42 @@ bg-[size:50px_50px]" />
         {/* subtle two left and right glow */}
         <div className="absolute inset-0 flex z-20 items-center justify-between pointer-events-none">
           <div className="w-[500px] h-[600px] bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-3xl opacity-30 -translate-x-40"></div>
-          <div className="w-[500px] h-[600px] bg-gradient-to-l from-pink-500 to-purple-500 rounded-full blur-3xl opacity-30 "></div>
+          <div className="w-[450px] h-[600px] bg-gradient-to-l from-pink-500 to-purple-500 rounded-full blur-3xl opacity-30 rounded-r-none translate-x-30"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gray-900/50 border border-pink-500 mb-8">
             <Zap className="w-4 h-4 mr-2 text-pink-500" />
-            <span className="text-xs text-gray-300 para">
+            <span className="text-xs text-gray-300 para cssanimation typing w-50">
               World's First Precision Predictions Platform
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bol mb-6 leading-tigt header">
+          <h1
+            className="text-4xl md:text-7xl font-bol mb-6 leading-tigt header"
+            data-aos="fade-up"
+          >
             Flex Your{" "}
             <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Financial Foresight
             </span>
           </h1>
 
-          <p className="text-md  text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed para">
+          <p
+            className="text-md  text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed para"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             Don't just be right. Be{" "}
             <span className="text-blue-400 font-semibold">accurate</span>. Get
             rewarded for precision, not just lucky guesses.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center para">
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center para"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
             <Button
               size="lg"
               className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white px-8 py-6 text-lg"
@@ -105,63 +131,85 @@ bg-[size:50px_50px]" />
 
       {/* About Section */}
       <section className="lg:px-32 w-full px-5">
-        
-             {/* GLOW*/}
-        {/* <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-200 h-120 rounded-b-none bg-gradient-to-r  from-cyan-400 to-blue-400 rounded-full blur-3xl opacity-30"></div>
-        </div> */}
+       
         <div className="grid lg:grid-cols-2 ">
-          <div className="flex flex-col justify-cente">
+          <div className="flex flex-col justify-cente mb-10">
             <div className="inline-flex items-center px-4 py-1 w-fit rounded-full bg-gray-900/50 border border-pink-500 mb-5">
-          {/* <Zap className="w-4 h-4 mr-2 text-pink-500" /> */}
-          <span className="text-xs text-gray-300 para">About</span>
-        </div>
-            <h1 className="header font-bold text-4xl ">
+              {/* <Zap className="w-4 h-4 mr-2 text-pink-500" /> */}
+              <span className="text-xs text-gray-300 para">About</span>
+            </div>
+            <h1 className="header font-bold text-4xl " data-aos="fade-left">
               What Sets{" "}
               <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 Trepa
               </span>{" "}
               Apart
             </h1>
-            <p className="para text-sm text-white/80 mt-4 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            <p
+              className="para text-sm text-white/80 mt-4 leading-relaxed"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
+              Trepa is a precision prediction platform that rewards you for how
+              accurate your forecasts are—not just if you're right. Unlike
+              traditional markets that offer binary bets, Trepa pays more the
+              closer your guess is to the actual result.
+              <br />
+              <br />
+              It's simple: slide, stake, and show off your IQ.
             </p>
-              <div className="grid lg:grid-cols-2 gap-4 mt-8">
-            <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer">
-              <span className="text-pink-500 text-xl rounded-lg p-3 bg-white/10"><RiAiGenerate2 /></span>
-              <p className="para text-md ">AI Assitant to help you become Certified</p>
+            <div
+              className="grid lg:grid-cols-2 gap-4 mt-8"
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
+              <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer ">
+                <span className="text-pink-500 text-xl rounded-lg p-3 bg-white/10">
+                  <RiAiGenerate2 />
+                </span>
+                <p className="para text-md ">
+                  AI Assitant to help you become Certified
+                </p>
+              </div>
+              <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer">
+                <span className="text-pink-500  text-xl rounded-lg p-3 bg-white/10">
+                  <VscVerifiedFilled />
+                </span>
+                <p className="para text-md ">
+                  Get Certified After taking Amplitude test
+                </p>
+              </div>
+              <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer">
+                <span className="text-pink-500 text-lg rounded-lg p-3 bg-white/10">
+                  <MdClass />
+                </span>
+                <p className="para text-md ">Classes for all fields</p>
+              </div>
+              <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer">
+                <span className="text-pink-500 text-lg rounded-lg p-3 bg-white/10">
+                  <GiToken />
+                </span>
+                <p className="para text-md ">
+                  Earn Reward Token After Activies
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer">
-              <span className="text-pink-500  text-xl rounded-lg p-3 bg-white/10"><VscVerifiedFilled /></span>
-              <p className="para text-md ">Get Certified After taking Amplitude test</p>
-            </div>
-            <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer">
-              <span className="text-pink-500 text-lg rounded-lg p-3 bg-white/10"><MdClass /></span>
-              <p className="para text-md ">Classes for all fields</p>
-            </div>
-            <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer">
-              <span className="text-pink-500 text-lg rounded-lg p-3 bg-white/10"><GiToken /></span>
-              <p className="para text-md ">Earn Reward Token After Activies</p>
-            </div>
-         
           </div>
-          </div>
-            <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center">
             {/* Glow background behind the image */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[450px] h-[450px] bg-pink-500 rounded-full blur-3xl lg:opacity-60 opacity-0"></div>
+              <div className="lg:w-[450px] lg:h-[450px] h-[250px] w-[250px] bg-pink-500  rounded-full blur-3xl opacity-60 "></div>
             </div>
             <Image
               src="/phone.png"
               alt="Trepa Hero Image"
               width={1000}
               height={1000}
-              className="rounded-2xl h-[700px] object-cover shadow-lg mt-4 md:mt-0 relative z-10 lg:block hidden"
+              className="rounded-2xl lg:h-[700px] h-[400px] object-cover shadow-lg mt-4 md:mt-0 relative z-10 lg:block "
+              data-aos="fade-up"
+              data-aos-duration="2000"
             />
-            </div>
+          </div>
         </div>
       </section>
 
@@ -181,7 +229,11 @@ bg-[size:50px_50px]" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <Card className="bg-red-900/20 border-red-800/50 p-10 rounded-2xl">
+            <Card
+              className="bg-red-900/20 border-red-800/50 p-10 rounded-2xl"
+              data-aos="fade-right"
+              data-aos-duration="2000"
+            >
               <CardContent className="p-0">
                 <h3 className="text-2xl font-bold text-red-400 mb-5 para">
                   Traditional Markets
@@ -202,7 +254,11 @@ bg-[size:50px_50px]" />
               </CardContent>
             </Card>
 
-            <Card className="bg-green-900/20 border-green-800/50 p-10 rounded-2xl">
+            <Card
+              className="bg-green-900/20 border-green-800/50 p-10 rounded-2xl"
+              data-aos="fade-left"
+              data-aos-duration="2000"
+            >
               <CardContent className="p-0">
                 <h3 className="text-2xl font-bold text-green-400 mb-5 para">
                   Trepa Precision
@@ -240,7 +296,11 @@ bg-[size:50px_50px]" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 ">
-            <Card className="bg-gray-900/40 border-gray-700 p-8 text-center">
+            <Card
+              className="bg-gray-900/40 border-gray-700 p-8 text-center"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <CardContent className="p-0">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Target className="w-8 h-8 text-white" />
@@ -253,7 +313,11 @@ bg-[size:50px_50px]" />
               </CardContent>
             </Card>
 
-            <Card className="bg-gray-900/50 border-gray-700 p-8 text-center">
+            <Card
+              className="bg-gray-900/50 border-gray-700 p-8 text-center"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <CardContent className="p-0">
                 <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <TrendingUp className="w-8 h-8 text-white" />
@@ -266,7 +330,11 @@ bg-[size:50px_50px]" />
               </CardContent>
             </Card>
 
-            <Card className="bg-gray-900/50 border-gray-700 p-8 text-center">
+            <Card
+              className="bg-gray-900/50 border-gray-700 p-8 text-center"
+              data-aos="fade-up"
+              data-aos-duration="3000"
+            >
               <CardContent className="p-0">
                 <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Zap className="w-8 h-8 text-white" />
@@ -377,12 +445,12 @@ bg-[size:50px_50px]" />
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-4 md:mb-0">
               <Image
-            className="w-28"
-            src={"/Trepa_logo_white.svg"}
-            alt=""
-            width={150}
-            height={100}
-          />
+                className="w-28"
+                src={"/Trepa_logo_white.svg"}
+                alt=""
+                width={150}
+                height={100}
+              />
             </div>
             <div className="flex space-x-8 text-gray-400 header text-sm">
               <Link href="#" className="hover:text-white transition-colors">
@@ -400,10 +468,7 @@ bg-[size:50px_50px]" />
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 header">
-            <p>
-              &copy; 2025 Trepa. All rights reserved.
-              platform.
-            </p>
+            <p>&copy; 2025 Trepa. All rights reserved. platform.</p>
           </div>
         </div>
       </footer>
