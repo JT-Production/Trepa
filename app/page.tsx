@@ -28,7 +28,7 @@ export default function TrepaLanding() {
             height={100}
           />
         </div>
-        <div className="flex items-center space-x-6 text-gray-300 header">
+        <div className="lg:flex items-center space-x-6 text-gray-300 header  hidden">
           <Link href="#" className="hover:text-white transition-colors">
             About
           </Link>
@@ -44,7 +44,7 @@ export default function TrepaLanding() {
         </div>
         <Button
               size="lg"
-              className="bg-gradient-to-r header from-pink-500 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white px-6 py-4 text-lg"
+              className="bg-gradient-to-r text-sm header from-pink-500 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl text-white px-6 py-4 "
             >
               Join Beta <ArrowRight className="ml-0.5 w-5 h-5" />
             </Button>
@@ -104,13 +104,13 @@ bg-[size:50px_50px]" />
       </section>
 
       {/* About Section */}
-      <section className="px-32 w-full">
+      <section className="lg:px-32 w-full px-5">
         
              {/* GLOW*/}
         {/* <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-200 h-120 rounded-b-none bg-gradient-to-r  from-cyan-400 to-blue-400 rounded-full blur-3xl opacity-30"></div>
         </div> */}
-        <div className="grid grid-cols-2">
+        <div className="grid lg:grid-cols-2 ">
           <div className="flex flex-col justify-cente">
             <div className="inline-flex items-center px-4 py-1 w-fit rounded-full bg-gray-900/50 border border-pink-500 mb-5">
           {/* <Zap className="w-4 h-4 mr-2 text-pink-500" /> */}
@@ -129,7 +129,7 @@ bg-[size:50px_50px]" />
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </p>
-              <div className="grid grid-cols-2 gap-4 mt-8">
+              <div className="grid lg:grid-cols-2 gap-4 mt-8">
             <div className="flex items-center gap-4 bg-white/5 backdrop-blur-3xl p-5 rounded-lg border border-white/10 cursor-pointer">
               <span className="text-pink-500 text-xl rounded-lg p-3 bg-white/10"><RiAiGenerate2 /></span>
               <p className="para text-md ">AI Assitant to help you become Certified</p>
@@ -152,14 +152,14 @@ bg-[size:50px_50px]" />
             <div className="relative flex items-center justify-center">
             {/* Glow background behind the image */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[450px] h-[450px] bg-pink-500 rounded-full blur-3xl opacity-60"></div>
+              <div className="w-[450px] h-[450px] bg-pink-500 rounded-full blur-3xl lg:opacity-60 opacity-0"></div>
             </div>
             <Image
               src="/phone.png"
               alt="Trepa Hero Image"
               width={1000}
               height={1000}
-              className="rounded-2xl h-[700px] object-cover shadow-lg mt-4 md:mt-0 relative z-10"
+              className="rounded-2xl h-[700px] object-cover shadow-lg mt-4 md:mt-0 relative z-10 lg:block hidden"
             />
             </div>
         </div>
