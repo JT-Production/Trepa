@@ -35,7 +35,7 @@ export default function TrepaLanding() {
       >
         <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
           <Image
-            className="md:w-30 lg:w-36 w-28"
+            className="w-30 lg:w-36 "
             src={"/Trepa_logo_white.svg"}
             alt=""
             width={150}
